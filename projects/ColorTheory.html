@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joe Brighter - Color Theory</title>
+        <link rel="stylesheet" href="projectStyle.css">
+        <script type="text/javascript" src="../js/processing.js"></script>
+        <script src="https://kit.fontawesome.com/6c1c3d0aa2.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <p id="logo" class="noselect">
+                    <span id="firstInitial" class="logoMainText">J</span><span class="logoSubText">oe&nbsp;</span>
+                    <span id="secondInitial" class="logoMainText">B</span><span class="logoSubText">righter</span>
+                </p>
+                <!--<img src="images/logo.png" class="logo">-->
+                <ul id="menu" class="noselect">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="contentColorTheory">
+
+        <div class="container">
+
+          <p>
+            I wanted to explore how to generate color filters in digital media, so I made a tool to demonstrate how, given a specific RGB value, a color is transformed into a grayscale version and an inverse version. (click to switch)
+            <span id="phoneMsg"><br>This project does not work well on mobile devices. Please try this on a desktop!</span>
+          </p>
+          
+          
+          <script type="text/processing" data-processing-target="sketch">
+
+            int frames = 0;
+
+            // invert variable is for switching between grayscale and inverted modes.
+            boolean invert = false;
+            
+            void setup() {
+              // width is set to be equal to the number of colors used
+              size(1530,700);
+              noStroke();
+            }
+            
+            void draw(){
+              
+              noStroke();
+              // calling a function to draw the rainbow for the current frame.
+              rainbow(frames);
+              
+              // increasing the frame variable for each frame.
+              frames += 1;
+              stroke(0);
+              strokeWeight(3);
+              
+              // making the viewing window
+              fill(255, 0);
+              rect(mouseX-225, 0, 400, height);
+              
+            }
+            
+            // mousePressed function for switching between grayscale and inverted
+            void mousePressed() {
+              invert = !invert;
+            }
+            
+            void rainbow(int frames) {
+              
+              // initializing the variables for drawing the rainbow
+              int round;
+              int i;
+              int r = 255;
+              int g = 0;
+              int b = 0;
+              
+              // this variable is for changing color values with the viewing window
+              boolean change = false;
+              
+              // this is the x location where the rainbow begins being draw at
+              // it is calculated by taking the modulo between the frames and the width.
+              // this makes sure thate the start point is always between 0 and 1530.
+              int startx = frames % width;
+              
+              // begin for-loop drawing
+              for(round = 0; round<6; round++){
+                for(i = 0; i<255; i++) {
+                  
+                  // this checks if the color being drawn is in the viewing window
+                  if(startx > (mouseX - 225) && startx < (mouseX + 175)) {
+                      change = true;
+                  }
+                  else {
+                      change = false;
+                  }
+                  
+                  // the round variable is for knowing whether we need to increase or decrease the r,g, or b value.
+                  if(round == 0) {
+                    // change the color if in viewing window
+                    if(change) {
+                      if(invert) {
+                        // inverted colors
+                        fill(255-r, 255-g, 255-b);
+                      }
+                      else {
+                        // grayscale
+                        fill((0.3 * r) + (0.59 * g) + (0.11 * b));
+                      }
+                    }
+                    else {
+                      // normal colors
+                      fill(r,g,b);
+                    }
+                    rect(startx, 0, 1, height);
+                    // change color slightly and move to next pixel
+                    g += 1;
+                    startx += 1;
+                  }
+                  
+                  else if(round == 1) {
+                    // change the color if in viewing window
+                    if(change) {
+                      if(invert) {
+                        // inverted colors
+                        fill(255-r, 255-g, 255-b);
+                      }
+                      else {
+                        // grayscale
+                        fill((0.3 * r) + (0.59 * g) + (0.11 * b));
+                      }
+                    }
+                    else {
+                      // normal colors
+                      fill(r,g,b);
+                    }
+                    rect(startx, 0, 1, height);
+                    // change color slightly and move to next pixel
+                    r -= 1;
+                    startx += 1;
+                  }
+                  
+                  else if(round == 2) {
+                    // change the color if in viewing window
+                    if(change) {
+                      if(invert) {
+                        // inverted colors
+                        fill(255-r, 255-g, 255-b);
+                      }
+                      else {
+                        // grayscale
+                        fill((0.3 * r) + (0.59 * g) + (0.11 * b));
+                      }
+                    }
+                    else {
+                      // normal colors
+                      fill(r,g,b);
+                    }
+                    rect(startx, 0, 1, height);
+                    // change color slightly and move to next pixel
+                    b += 1;
+                    startx += 1;
+                  }
+                  
+                  else if(round == 3) {
+                    // change the color if in viewing window
+                    if(change) {
+                      if(invert) {
+                        // inverted colors
+                        fill(255-r, 255-g, 255-b);
+                      }
+                      else {
+                        // grayscale
+                        fill((0.3 * r) + (0.59 * g) + (0.11 * b));
+                      }
+                    }
+                    else {
+                      // normal colors
+                      fill(r,g,b);
+                    }
+                    rect(startx, 0, 1, height);
+                    // change color slightly and move to next pixel
+                    g -= 1;
+                    startx += 1;
+                  }
+                  
+                  else if(round == 4) {
+                    // change the color if in viewing window
+                    if(change) {
+                      if(invert) {
+                        // inverted colors
+                        fill(255-r, 255-g, 255-b);
+                      }
+                      else {
+                        // grayscale
+                        fill((0.3 * r) + (0.59 * g) + (0.11 * b));
+                      }
+                    }
+                    else {
+                      // normal colors
+                      fill(r,g,b);
+                    }
+                    rect(startx, 0, 1, height);
+                    // change color slightly and move to next pixel
+                    r += 1;
+                    startx += 1;
+                  }
+                  
+                  else if(round == 5) {
+                    // change the color if in viewing window
+                    if(change) {
+                      if(invert) {
+                        // inverted colors
+                        fill(255-r, 255-g, 255-b);
+                      }
+                      else {
+                        // grayscale
+                        fill((0.3 * r) + (0.59 * g) + (0.11 * b));
+                      }
+                    }
+                    else {
+                      // normal colors
+                      fill(r,g,b);
+                    }
+                    rect(startx, 0, 1, height);
+                    // change color slightly and move to next pixel
+                    b -= 1;
+                    startx += 1;
+                  }
+                  
+                  // if the drawing point is off of screen, reset it at 0.
+                  if(startx > width){
+                    startx = 0;
+                  }
+                }
+              }
+            }
+
+
+
+
+
+        </script>
+        <canvas id="sketch"></canvas>
+        
+
+        
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © Joe Brighter. Design inspired by @GreatStack on Youtube</p>
+        </div>
+
+    </div>
+      
+    <script src="../logoScript.js"></script>
+    </body>
+</html>

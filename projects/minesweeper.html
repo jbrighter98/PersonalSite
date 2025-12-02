@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joe Brighter - MineSweeper</title>
+        <link rel="stylesheet" href="projectStyle.css">
+        <link rel="stylesheet" href="minesweeper.css">
+        <script type="text/javascript" src="minesweeper.js"></script>
+        <script src="https://kit.fontawesome.com/6c1c3d0aa2.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <p id="logo" class="noselect">
+                        <span id="firstInitial" class="logoMainText">J</span><span class="logoSubText">oe&nbsp;</span>
+                        <span id="secondInitial" class="logoMainText">B</span><span class="logoSubText">righter</span>
+                    </p>
+                    <!--<img src="images/logo.png" class="logo">-->
+                    <ul id="menu" class="noselect">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container">
+                
+                <p><span id="phoneMsg"><br>This project does not work well on mobile devices. Please try this on a desktop!</span></p>
+                
+                <button class="btn noselect" onclick="startEasy()">Easy</button>
+                <button class="btn noselect" onclick="startMedium()">Intermediate</button>
+                <button class="btn noselect" onclick="startHard()">Hard</button>
+                <button class="btn noselect" onclick="startVeryHard()"> Very Hard</button>
+                <div class="prevent-select" style="float:right; margin: 5px; margin-top: 25px; margin-right: 6%; font-size: 20px;">
+                    <span id="bombNum" style="color:red; font-size: 30px;">10</span>
+                </div>
+                
+                <div class="prevent-select" style="float:right; margin: 5px; margin-top: 25px; margin-right: 6%; font-size: 20px;">
+                    
+                    <span id="timer" style="color:#fff; font-size: 20px;"><label id="minutes">00</label>:<label id="seconds">00</label></span>
+                </div>
+            </div>
+
+            <div id="gameContainer"></div>
+
+            <div class="copyright">
+                <p>Copyright © Joe Brighter. Design inspired by @GreatStack on Youtube</p>
+            </div>
+        </div>
+
+        
+
+    <script>
+        window.oncontextmenu = function ()
+        {
+            //showCustomMenu();
+            return false;     // cancel default menu
+        }
+
+        //easy = 9x9 10
+        //medium = 16x16 40
+        //hard = 30x16 99
+        //very hard = 30x16 120
+        buildBoard(9,9,10);
+
+    </script>
+
+    <script src="../logoScript.js"></script>
+    
+    </body>
+</html>
