@@ -1,0 +1,138 @@
+
+.game {
+    display:block;
+    border: 0px solid rgb(104, 104, 104);
+    background-color: #a0a0a0;
+    padding:0px;
+    margin: auto;
+    margin-top:50px;
+}
+
+.tile {
+    border: 1px solid rgb(104, 104, 104);
+    background-color: #ebebeb;
+    width: 32px;
+    height: 32px;
+    float: left;
+    text-align: center;
+}
+
+.tile:hover {
+    border-width: 2px;
+    width:32px;
+    height:32px;
+}
+
+.tile:active:hover {
+    background-color: rgb(124, 124, 124);
+
+}
+
+.num0 {
+    margin: auto;
+    font-size: 44px;
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+}
+
+.numB {
+    margin: auto;
+    font-size: 23px;
+    color: rgb(0, 0, 0);
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+.num1 {
+    margin: auto;
+    font-size: 26px;
+    color: blue;
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+.num2 {
+    margin: auto;
+    font-size: 26px;
+    color: green;
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+.num3 {
+    margin: auto;
+    font-size: 26px;
+    color: red;
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+.num4 {
+    margin: auto;
+    font-size: 26px;
+    color: rgb(0, 0, 110);
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+.num5 {
+    margin: auto;
+    font-size: 26px;
+    color: rgb(112, 0, 0);
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+.num6 {
+    margin: auto;
+    font-size: 26px;
+    color: rgb(0, 152, 199);
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+.num7 {
+    margin: auto;
+    font-size: 26px;
+    color: rgb(115, 0, 126);
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+.num8 {
+    margin: auto;
+    font-size: 26px;
+    color: rgb(92, 92, 92);
+    width:100%;
+    height:100%;
+    background-color: #d1d1d1;
+    font-weight: bold;
+}
+
+
+.flag {
+    margin: auto;
+    font-size: 24px;
+    text-align: center;
+    color: rgb(197, 145, 0);
+    width:100%;
+    height:100%;
+}
+
