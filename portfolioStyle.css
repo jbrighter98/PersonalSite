@@ -108,6 +108,122 @@ nav ul li a:hover::after {
     padding-top: 50px;
 }
 
+
+/* --- SEARCH BAR STYLES --- */
+
+.work-header {
+    margin-top: 50px;
+    width:100%;
+}
+
+/* --- NEW SEARCH BAR STYLES AND SORT BUTTONS --- */
+.search-container {
+    margin-top: 30px;
+    display: flex;
+    width: 90%;
+    max-width: 700px; /* Increased max-width for better separation */
+    margin-bottom: 30px;
+    background-color: var(--dark-input);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #3a3a3a;
+    padding: 8px; /* Adjusted padding */
+    align-items: center;
+    /* KEY CHANGE: Pushes first element (search) to the left and second (sort) to the right */
+    justify-content: space-between; 
+}
+
+.search-field-group {
+    display: flex;
+    flex-grow: 1;
+    /* Allow it to grow but cap the size so sort buttons don't get pushed too far */
+    max-width: 450px; 
+    background-color: #333; /* Slightly darker background for the input area */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px 15px; /* Slightly adjusted padding */
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 16px;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #777;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    padding: 10px 12px; /* Smaller padding */
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+}
+
+.search-button:hover {
+    background-color: #444; /* Hover darker gray */
+    color: white;
+}
+
+.search-icon {
+    width: 20px; /* Slightly smaller icon */
+    height: 20px;
+    fill: currentColor;
+}
+
+/* NEW SORT BUTTON STYLES */
+.sort-buttons {
+    display: flex;
+    overflow: hidden; 
+    border-radius: 8px;
+    border: 1px solid var(--main-color); /* Highlight the group */
+    line-height: 1;
+    /* Ensure the sort buttons stay compact on the right */
+    flex-shrink: 0; 
+}
+
+.sort-button {
+    background-color: #3a3a3a; /* Inactive background */
+    color: #bbb;
+    border: none;
+    padding: 8px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sort-button:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.sort-button.active {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.sort-button:first-child {
+    border-right: 1px solid var(--main-color); /* Separator */
+}
+
+.sort-button.active:first-child {
+    border-right: 1px solid #ffffff33; /* Separator when active */
+}
+
+/*******************************************/
+
 .sub-title {
     font-size: 60px;
     font-weight: 600;
@@ -118,8 +234,10 @@ nav ul li a:hover::after {
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     grid-gap: 40px;
-    margin-top: 50px;
+    margin-top: 20px;
+    border-top: 2px dotted var(--main-color);
 }
+
 .work {
     border-radius: 10px;
     position: relative;
@@ -128,6 +246,7 @@ nav ul li a:hover::after {
     border-radius: 10px;
     text-align: center;
     margin: 1em 0;
+    transition: transform 0.3s;
 }
 .helper {
     display: inline-block;
@@ -144,28 +263,59 @@ nav ul li a:hover::after {
 }
 .layer {
     width: 100%;
-    height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), var(--main-color));
-    border-radius: 10px;
+    height: auto;
+    max-height: 100px;
+    background: linear-gradient(rgba(0,0,0,0.6), black);
+    border-top: 2px solid var(--main-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     position: absolute;
     left: 0;
     bottom: 0;
     overflow: hidden;
     display: flex;
+    /*justify-content: center;*/
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     padding: 0 40px;
     text-align: center;
     font-size: 14px;
-    transition: height 0.3s;
+    transition: max-height 0.3s;
     white-space: wrap;
 }
 .layer h3 {
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 20px;
+    width:100%;
+    margin-top:20px;
 }
+.layer p {
+    opacity: 0;
+    transition: opacity 0.3s 0.1s;
+}
+.layer a {
+    opacity: 0;
+    transition: opacity 0.3s 0.1s;
+}
+
+.layer .tag-holder {
+    width:100%;
+}
+
+.layer .tag {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    background:rgb(84, 84, 84);
+    border: 1px solid rgb(61, 61, 61); 
+    border-radius: 20px;
+    font-size: 14px;
+    width:fit-content;
+    float: left;
+    padding: 5px;    
+}
+
 .layer .projectLink {
     margin-top: 20px;
     color: var(--main-color-darker);
@@ -186,7 +336,13 @@ nav ul li a:hover::after {
     transform: scale(1.1);
 }
 .work:hover .layer {
-    height: 100%;
+    max-height: 80%;
+}
+.work:hover .layer p {
+    opacity: 1;
+}
+.work:hover .layer a {
+    opacity: 1;
 }
 
 .copyright {

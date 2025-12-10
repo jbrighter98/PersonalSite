@@ -26,47 +26,23 @@
         <div id="portfolio">
             <div class="container">
                 <h1 class="sub-title noselect">My Projects</h1>
-                <div class="work-list">
-                    <div class="work">
-                        <span class="helper"></span>
-                        <img src="images/cyclisticImage.png" alt="Cyclistic Data Analysis">
-                        <div class="layer">
-                            <h3>Cyclistic Bike-Share Usage Analysis</h3>
-                            <p>In pursuing my Google Data Analytics Certificate, I had the opportunity to do a trial analysis with a large public dataset. I did my cleaning, analysis, and visualizations using RMarkdown. This is the result. Link to repository: <a class="projectDescriptionLink" target="_blank" href="https://github.com/jbrighter98/Cyclistic-Data-Analysis/tree/main">LINK</a></p>
-                            <a class="projectLink" href="projects/Cyclistic_BikeShare_Usage_Analysis.html"><i class="fa-solid fa-up-right-from-square"></i></a>
-                        </div>
+
+
+                <div class="search-container">
+                    <!-- Input and Search Button Group (Left side) -->
+                    <div class="search-field-group">
+                        <input id="search-input" type="text" placeholder="Search projects..." class="search-input">
+                        <button class="search-button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </div>
-                    <div class="work">
-                        <span class="helper"></span>
-                        <img src="images/kickUpImage.png" alt="KickUp">
-                        <div class="layer">
-                            <h3>Kickup</h3>
-                            <p>
-                                I created a web based game in p5.js like the game Kick Up in an attempt to learn progamming for artistic purposes. This is a part of the same learning exploration occuring after the Color Theory project I have here.
-                            </p>
-                            <a class="projectLink" href="projects/KickUp.html"><i class="fa-solid fa-up-right-from-square"></i></a>
-                        </div>
+                    <!-- Sort Buttons Group (Right side) -->
+                    <div class="sort-buttons">
+                        <button class="sort-button active" data-sort="desc">Newest First</button>
+                        <button class="sort-button" data-sort="asc">Oldest First</button>
                     </div>
-                    <div class="work">
-                        <span class="helper"></span>
-                        <img src="images/minesweeperImage.png" alt="MineSweeper">
-                        <div class="layer">
-                            <h3>MineSweeper</h3>
-                            <p>I developed my version of MineSweeper on my website using just HTML/CSS and Javascript.</p>
-                            <a class="projectLink" href="projects/minesweeper.html"><i class="fa-solid fa-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="work">
-                        <span class="helper"></span>
-                        <img src="images/colorTheoryImage.png" alt="Color Theory">
-                        <div class="layer">
-                            <h3>Color Theory</h3>
-                            <p>
-                                I wanted to explore how to generate color filters in digital media, so I made a tool to demonstrate how, given a specific RGB value, a color is transformed into a grayscale version and and inverse version.
-                            </p>
-                            <a class="projectLink" href="projects/ColorTheory.html"><i class="fa-solid fa-up-right-from-square"></i></a>
-                        </div>
-                    </div>
+                </div>
+                <div class="work-list" id="work-list">
                 </div>
             </div>
             <div class="copyright">
@@ -75,5 +51,101 @@
         </div>
 
         <script src="logoScript.js"></script>
+        <script src="portfolioScript.js"></script>
+
+        <script>
+            
+            var fullProjectCache;
+            var partialProjectCache;
+            var activeSort = "desc";
+
+            fetch('./portfolio.json')
+                .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json(); // Parse the JSON data from the response
+                })
+                .then(data => {
+                // 'data' now contains the parsed JSON object
+                fullProjectCache = data;
+                partialProjectCache = data;
+                displayProjects(data, "desc", 0);
+                })
+                .catch(error => {
+                console.error('Error fetching or parsing JSON:', error);
+                });
+
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const sortButtons = document.querySelectorAll('.sort-button');
+                const searchInput = document.getElementById('search-input');
+                const workList = document.getElementById("work-list");
+
+                function handleSortClick(event) {
+                    // Using 'this' (the button element itself)
+                    const clickedButton_this = this;
+
+                    // Get the sorting direction (e.g., 'asc' or 'desc')
+                    const sortDirection = clickedButton_this.getAttribute('data-sort'); 
+                    
+                    // Remove 'active' class from all buttons
+                    sortButtons.forEach(button => {
+                        button.classList.remove('active');
+                    });
+                    
+                    // Add 'active' class to the button that was just clicked
+                    clickedButton_this.classList.add('active');
+
+                    // Clear work-list
+                    workList.innerHTML = "";
+
+                    // change active sort
+                    activeSort = sortDirection;
+
+                    // Display
+                    displayProjects(partialProjectCache, sortDirection, 0);
+
+                }
+
+                function filterProjects(searchTerm) {
+                    const term = searchTerm.toLowerCase().trim();
+                    
+                    // Show all if search box is empty
+                    if (term === "") {
+                        partialProjectCache = fullProjectCache; 
+                    }
+
+
+                    //return projectData.filter(project => {
+                    partialProjectCache = fullProjectCache.filter(project => {
+                        // Check Title
+                        const titleMatch = project.title.toLowerCase().includes(term);
+
+                        // Check Description
+                        const descriptionMatch = project.description.toLowerCase().includes(term);
+
+                        // Check Tags (using .some() to check if ANY tag includes the term)
+                        const tagsMatch = project.tags.some(tag => tag.toLowerCase().includes(term));
+
+                        // Return true if any field matches the search term
+                        return titleMatch || descriptionMatch || tagsMatch;
+                    });
+                }
+
+
+                searchInput.addEventListener('input', (event) => {
+                    const searchTerm = event.target.value;
+                    filterProjects(searchTerm);
+                    workList.innerHTML = "";
+                    displayProjects(partialProjectCache, activeSort, 0);
+                });
+
+                sortButtons.forEach(button => {
+                    button.addEventListener('click', handleSortClick);
+                });
+            });
+        </script>
+
     </body>
 </html>
