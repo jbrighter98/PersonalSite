@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Cyclistic Bike-Share Usage Analysis",
+    "tags": ["data analysis"],
+    "description": "In pursuing my Google Data Analytics Certificate, I had the opportunity to do a trial analysis with a large public dataset. I did my cleaning, analysis, and visualizations using RMarkdown. This is the result. Link to repository: <a class=\"projectDescriptionLink\" target=\"_blank\" href=\"https://github.com/jbrighter98/Cyclistic-Data-Analysis/tree/main\">LINK</a>",
+    "destination": "projects/Cyclistic_BikeShare_Usage_Analysis.html",
+    "image": "images/cyclisticImage.png",
+    "date": "2025-11-25"
+  },
+  {
+    "id": 2,
+    "title": "KickUp",
+    "tags": ["coding"],
+    "description": "I created a web based game in p5.js like the game Kick Up in an attempt to learn progamming for artistic purposes. This is a part of the same learning exploration occuring after the Color Theory project I have here.",
+    "image": "images/kickUpImage.png",
+    "destination": "projects/KickUp.html",
+    "date": "2021-04-11"
+  },
+  {
+    "id": 3,
+    "title": "MineSweeper",
+    "tags": ["coding"],
+    "description": "I developed my version of MineSweeper on my website using just HTML/CSS and Javascript.",
+    "image": "images/minesweeperImage.png",
+    "destination": "projects/minesweeper.html",
+    "date": "2023-10-20"
+  },
+  {
+    "id": 4,
+    "title": "Color Theory",
+    "tags": ["coding"],
+    "description": "I wanted to explore how to generate color filters in digital media, so I made a tool to demonstrate how, given a specific RGB value, a color is transformed into a grayscale version and and inverse version.",
+    "image": "images/colorTheoryImage.png",
+    "destination": "projects/ColorTheory.html",
+    "date": "2021-02-20"
+  }
+]
