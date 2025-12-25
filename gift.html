@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joe Brighter - Gifts</title>
+
+  <style>
+    :root {
+      --bg: #0f1115;
+      --text: #e6e8eb;
+      --muted: #9aa0a6;
+      --accent: #c9b37e;
+      --accent-hover: #d9c98c;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 520px;
+      padding: 2.5rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    select {
+        top: 100px;
+        position: absolute;
+        background: var(--bg);
+        color: var(--text);
+        border: 1px solid var(--muted);
+        padding: 0.4rem 0.6rem;
+        font-size: 1rem;
+    }
+
+    h1 {
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .copy-btn {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .copied {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      visibility: hidden;
+    }
+
+    .chooserText {
+        top: 50px;
+        position: absolute;
+        display:none;
+    }
+
+  </style>
+</head>
+<body>
+
+    <p class="chooserText" id="chooserText">Who are you?</p>
+    <select id="personSelect"></select>
+    <div class="container" id="container">
+
+        <h1 id="title"></h1>
+        <p id="dedication"></p>
+
+        <div class="video-wrapper">
+          <iframe
+            id="video"
+            src=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <button class="copy-btn" id="copyLink">
+          COPY LINK
+        </button>
+        <div class="copied" id="copiedMsg">Link copied</div>
+
+    </div>
+
+  <script>
+    const people = {
+      mom: {
+        label: "Mom",
+        title: "After the Noise",
+        text: "A calm moment after a long day. Warm, unhurried, and steady, letting things settle without needing silence.",
+        text2: "A mellow, piano-led instrumental with a steady groove, light guitars, and a clean, unhurried solo.",
+        youtubeId: "25RZMKLgJTA"
+      },
+      dad: {
+        label: "Dad",
+        title: "Low Voltage",
+        text: "A driving, gritty piece with momentum and attitude. Steady, grounded, and built to move forward without rushing.",
+        text2: "A heavy, blues-tinged rock instrumental built on a gritty riff and a loose, expressive guitar solo.",
+        youtubeId: "qMWMIw10MNE"
+      },
+      kate: {
+        label: "Kate",
+        title: "Places",
+        text: "Bright and kinetic, with the feeling of things coming together. Movement, preparation, and the energy just before something begins.",
+        text2: "A fast-paced, piano-led instrumental with string support, written to feel like a transitional montage or the moments just before a scene begins.",
+        youtubeId: "tq1xEtRFizo"
+      },
+      jim: {
+        label: "Jim",
+        title: "Late Compile",
+        text: "Focused and restless at the same time. Rhythmic, layered, and gradually opening into something louder and less controlled.",
+        text2: "An electronic track built around a driving synth bass and layered harmonies, opening up in the second half with a distorted guitar line.",
+        youtubeId: "wBmOU3l2Cc4"
+      },
+      fangzhuo: {
+        label: "Fangzhuo",
+        title: "Quiet Distance",
+        text: "Slow, open, and gentle. Designed to sit comfortably in the background while harmonies quietly shift and overlap.",
+        text2: "A slow, piano-led piece in a major key, supported by strings and a soft horn sustaining gentle harmonies throughout.",
+        youtubeId: "LPg8rCEaeS4"
+      }
+    };
+
+    const select = document.getElementById("personSelect");
+    const title = document.getElementById("title");
+    const dedication = document.getElementById("dedication");
+    const video = document.getElementById("video");
+    const copyBtn = document.getElementById("copyLink");
+    const copiedMsg = document.getElementById("copiedMsg");
+
+    var currentYoutubeUrl = "";
+
+    // Populate dropdown
+    for (const key in people) {
+      const option = document.createElement("option");
+      option.value = key;
+      option.textContent = people[key].label;
+      select.appendChild(option);
+    }
+    var finalOption = document.createElement("option");
+    finalOption.value = "";
+    finalOption.textContent = "Select your name";
+    finalOption.selected = true;
+    finalOption.hidden = true;
+    select.appendChild(finalOption);
+
+    function toggleChooser(key) {
+      var container = document.getElementById("container");
+      var chooserText = document.getElementById("chooserText");
+
+      if(key != "None") {
+        container.style.display = "block";
+        chooserText.style.display = "none";
+      }
+      else {
+        container.style.display = "none";
+        chooserText.style.display = "block";
+      }
+    }
+
+    function loadPerson(key, updateUrl = true) {
+
+      if(key == "None") {
+        toggleChooser(key);
+        return;
+      } 
+
+      const p = people[key];
+      if (!p) return;
+
+      title.textContent = p.title;
+      dedication.textContent = p.text;
+      video.src = `https://www.youtube.com/embed/${p.youtubeId}?rel=0`;
+
+      currentYoutubeUrl = `https://youtu.be/${p.youtubeId}`;
+
+      select.value = key;
+
+      toggleChooser(key);
+
+      if (updateUrl) {
+        const url = new URL(window.location);
+        url.searchParams.set("person", key);
+        window.history.replaceState({}, "", url);
+      }
+    }
+
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(currentYoutubeUrl);
+        copiedMsg.style.visibility = "visible";
+        setTimeout(() => copiedMsg.style.visibility = "hidden", 2000);
+      } catch {
+        alert("Could not copy link");
+      }
+    });
+
+    // Read GET parameter
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get("person") || "None";
+
+    loadPerson(initial, false);
+
+    select.addEventListener("change", e => {
+      loadPerson(e.target.value);
+    });
+  </script>
+</body>
+</html>
