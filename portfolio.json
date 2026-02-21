@@ -1,5 +1,14 @@
 [
   {
+    "id": 0,
+    "title": "GravitySim",
+    "tags": ["coding", "C++"],
+    "description": "GravitySim is a physics simulation program I created using C++ and OpenGL. It simulates the gravitational interactions between celestial bodies, allowing users to visualize the dynamics of planetary systems and galaxies. The program includes features such as adjustable parameters for mass, velocity, and time step, as well as real-time rendering of the simulation. This project is a significant learning experience in both programming and physics, and it has been a rewarding way to explore the complexities of gravitational forces. Link to repository: <a class=\"projectDescriptionLink\" target=\"_blank\" href=\"https://github.com/jbrighter98/GravitySim/tree/main\">LINK</a>",
+    "destination": "projects/GravitySim.html",
+    "image": "images/gravitySim.png",
+    "date": "2026-02-20"
+  },
+  {
     "id": 1,
     "title": "Cyclistic Bike-Share Usage Analysis",
     "tags": ["data analysis"],
@@ -11,7 +20,7 @@
   {
     "id": 2,
     "title": "KickUp",
-    "tags": ["coding"],
+    "tags": ["coding", "processing.js"],
     "description": "I created a web based game in p5.js like the game Kick Up in an attempt to learn progamming for artistic purposes. This is a part of the same learning exploration occuring after the Color Theory project I have here.",
     "image": "images/kickUpImage.png",
     "destination": "projects/KickUp.html",
@@ -20,7 +29,7 @@
   {
     "id": 3,
     "title": "MineSweeper",
-    "tags": ["coding"],
+    "tags": ["coding", "javascript"],
     "description": "I developed my version of MineSweeper on my website using just HTML/CSS and Javascript.",
     "image": "images/minesweeperImage.png",
     "destination": "projects/minesweeper.html",
@@ -29,7 +38,7 @@
   {
     "id": 4,
     "title": "Color Theory",
-    "tags": ["coding"],
+    "tags": ["coding", "processing.js"],
     "description": "I wanted to explore how to generate color filters in digital media, so I made a tool to demonstrate how, given a specific RGB value, a color is transformed into a grayscale version and and inverse version.",
     "image": "images/colorTheoryImage.png",
     "destination": "projects/ColorTheory.html",

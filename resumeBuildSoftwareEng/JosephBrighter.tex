@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% ModernCV themes
+\moderncvstyle{banking} 
+\moderncvcolor{black}   
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+
+% Adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+\usepackage{ulem}
+
+\definecolor{colorBlack}{rgb}{0,0,0}
+
+% Custom Font Size Configuration
+\colorlet{firstnamecolor}{colorBlack}
+\renewcommand{\sectionfont}{\fontsize{14}{15}\selectfont\color{sectioncolor}\normalfont\bfseries}
+\renewcommand{\subsectionfont}{\fontsize{12}{13}\selectfont\color{sectioncolor}\normalfont\bfseries}
+\renewcommand{\namefont}{\fontsize{25}{23}\selectfont\normalfont\color{black}}
+\renewcommand{\titlefont}{\fontsize{21}{23}\selectfont\normalfont\color{black}}
+
+
+% Personal Data
+\name{\textbf{Joseph}}{\textbf{Brighter}}
+\title{Software Engineer}
+\phone[mobile]{267-481-0802}
+\email{joe.brighter98@gmail.com}
+\homepage{joebrighter.com}
+\social[linkedin]{joseph-brighter-53607a176}
+
+\begin{document}
+
+%--- Make the Title ---
+\makecvtitle
+
+%--- Summary ---
+\vspace{-2em}
+\small{Results-oriented Software Developer with 4 years of professional experience in enterprise environments and a background in freelance technical consulting. Expert in building scalable full-stack architectures using Python, Django, and SQL. Proven track record of increasing system capacity by 500\% and automating complex workflows to drive operational efficiency.}
+
+%--- Skills ---
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{Languages \& Frameworks:} Python (Django), C/C++, SQL (PostgreSQL, MySQL), Node.js, Bash, JavaScript, R, HTML/CSS.
+    \item \textbf{Tools \& DevOps:} Docker, Git/GitHub, Jira, AWS, Azure, CI/CD Pipelines.
+    \item \textbf{Data Engineering:} RStudio, Pandas, NumPy, Scikit-learn, Data Visualization (Tableau), EDA.
+\end{itemize}
+
+%--- Experience ---
+\section{Professional Experience}
+
+\cventry{Feb 2025 -- Present}{Freelance Software Engineer}{Self-Employed}{Philadelphia, PA}{}{
+\begin{itemize}%
+    \item Provided local clients and small businesses with personal technical solutions, ranging from web application development to backend automation scripts.
+    \item Developed scripts and websites using \textbf{Python}, \textbf{JavaScript}, and \textbf{HTML/CSS}
+    \item Managed the full software development lifecycle for diverse projects, including requirements gathering, UI/UX design, and deployment on cloud platforms.
+\end{itemize}}
+
+\cventry{April 2022 -- Nov 2024}{Software Developer II}{Comcast Corp.}{Philadelphia, PA}{}{
+\begin{itemize}%
+    \item Architected and maintained internal software tools using \textbf{Python}, \textbf{Django}, and \textbf{PostgreSQL}, serving as the primary backend developer for internal services.
+    \item Optimized application logic and database queries to scale infrastructure support from 50 to 300+ users (a \textbf{500\% increase} in capacity) while maintaining sub-second response times.
+    \item Engineered automated scripts to parse and analyze complex logs from embedded software devices, transforming raw unstructured data into actionable debugging insights for firmware teams.
+\end{itemize}}
+
+\cventry{April 2020 -- Jan 2022}{Lead Developer \& Co-Founder}{QuestUni LLC}{State College, PA}{}{
+\begin{itemize}%
+    \item Led the end-to-end full-stack development of a student research service website, utilizing \textbf{Javascript} and \textbf{MySQL} to create a responsive and scalable user experience.
+    \item Designed and managed the core database schema, implementing a matching service that increased research engagement by \textbf{25\%}.
+    \item Directed the technical roadmap, from initial MVP design to cloud deployment on \textbf{AWS}, ensuring high availability and data security.
+\end{itemize}}
+
+%--- Education & Certifications ---
+\section{Education \& Certifications}
+\cventry{Aug 2017 -- May 2021}{B.S. in Computer Science and Mathematics}{Pennsylvania State University}{State College, PA}{}{} 
+
+\cventry{Issued 2026}{\uline{Google Advanced Data Analytics Certificate}}{}{}{}{Advanced Python libraries for statistical modeling, regression, and machine learning.}
+\cventry{Issued 2025}{\uline{Google Data Analytics Professional Certificate}}{}{}{}{Foundational training in data cleaning, SQL analysis, and R programming.}
+
+\end{document}

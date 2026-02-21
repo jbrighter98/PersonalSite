@@ -1,0 +1,92 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% ModernCV themes
+\moderncvstyle{banking} % Options: 'casual', 'classic', 'oldstyle', 'banking'
+\moderncvcolor{black}    % Options: 'blue', 'orange', 'green', 'red', 'purple', 'grey'
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+
+% Adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+\usepackage{ulem}
+
+\definecolor{colorBlack}{rgb}{0,0,0}
+
+% Custom Font Size Configuration
+% Slightly reduce the size of the name and tighten up section spacing
+
+\colorlet{firstnamecolor}{colorBlack}
+\renewcommand{\sectionfont}{\fontsize{14}{15}\selectfont\color{sectioncolor}\normalfont\bfseries} % Tightened line spacing
+\renewcommand{\subsectionfont}{\fontsize{12}{13}\selectfont\color{sectioncolor}\normalfont\bfseries} % Tightened line spacing
+\renewcommand{\namefont}{\fontsize{25}{23}\selectfont\normalfont\color{black}} % Slightly reduced name size
+\renewcommand{\titlefont}{\fontsize{21}{23}\selectfont\normalfont\color{black}}
+
+
+% Personal Data
+\name{\textbf{Joseph}}{\textbf{Brighter}}
+\title{Data Scientist}
+%\address{Philadelphia, PA}{}{}
+\phone[mobile]{267-481-0802}
+\email{joe.brighter98@gmail.com}
+\homepage{joebrighter.com}
+\social[linkedin]{joseph-brighter-53607a176}
+
+\begin{document}
+
+%--- Make the Title ---
+\makecvtitle
+
+%--- Summary ---
+\vspace{-2em}
+\small{Detail-oriented Software Developer with 4 years of experience, pivoting to Data Science. Proven track record of leveraging Python, SQL, and scalable full-stack architecture to build data solutions and conduct exploratory analysis. Certified Google Data Analytics Professional.}
+
+%--- Skills ---
+\section{Technical Skills}
+\begin{itemize}
+    % Consolidated categories for better space
+    \item \textbf{Data/ML:} Pandas, NumPy, Tableau, EDA, Statistics, PostgreSQL, MySQL, Data Visualization, Scikit-learn.
+    \item \textbf{Languages/Tools:} Python, R, SQL, Django, Node.js, C/C++, Bash.
+    \item \textbf{Cloud/DevOps:} Docker, Git/GitHub, Jenkins, Jira, AWS, Azure.
+\end{itemize}
+
+%--- Experience ---
+\section{Professional Experience}
+
+\cventry{Feb 2025 -- Present}{Freelance Software Engineer}{Self-Employed}{Philadelphia, PA}{}{
+\begin{itemize}%
+    \item Provided local clients and small businesses with personal technical solutions
+\end{itemize}}
+\cventry{April 2022 -- Nov 2024}{Software Developer II}{Comcast Corp.}{Philadelphia, PA}{}{
+\begin{itemize}%
+    \item Architected and maintained internal data tools using \textbf{Python}, \textbf{Django}, and \textbf{PostgreSQL}, facilitating critical workflows for internal development teams.
+    \item Optimized database queries and application logic to scale infrastructure support from 50 to 300+ users (a \textbf{500\% increase} in capacity) without performance degradation.
+    \item Engineered automated scripts to parse and analyze complex logs from embedded software devices, transforming raw unstructured data into actionable insights for debugging.
+\end{itemize}}
+
+\cventry{April 2020 -- Jan 2022}{Lead Developer \& Co-Founder}{QuestUni LLC}{State College, PA}{}{
+\begin{itemize}%
+    \item Conducted \textbf{exploratory data analysis} on survey data from hundreds of students and faculty, identifying key engagement bottlenecks, and implemented data-driven platform improvements based on analysis results, leading to a verified \textbf{25\% increase} in research engagement.
+    \item Designed the core database schema using \textbf{MySQL} to efficiently store and retrieve complex matching criteria for user-generated inputs.
+\end{itemize}}
+
+%--- Projects Section (Placeholder for Portfolio) ---
+\section{Selected Projects}
+\cventry{Ongoing}{Data Science Portfolio}{joebrighter.com}{Online}{}{
+\begin{itemize}%
+    \item \uline{\textit{Cyclistic Bike Share Analysis}}: Analyzed 8 months of bike share records using \textbf{RMarkdown} to differentiate member usage; recommended weekend promotions to increase member conversions by targeting casual users, who ride \textbf{~100\% more} on weekends.
+    %\item \uline{\textit{Exoplanet Discovery Classification}}: In Progress - using NASA Exoplanet Archive to build a multi-class classification model to predict if a celestial body is a confirmed exoplanet, a false positive, or a candidate.
+    %\item \uline{\textit{Hubble/James Webb Image Segmentation \& Object Detection}}: In Progress - using deep learning to identify and outline features in images (e.g., galaxies, nebulae, stars, or specific regions of interest)
+\end{itemize}}
+
+%--- Education ---
+\section{Education \& Certifications}
+% Certifications (Most Recent First)
+\cventry{Issued 2026}{\uline{Google Advanced Data Analytics Certificate}}{}{}{}{Focusing on Python, statistical analysis, regression analysis, and machine learning models.}
+\cventry{Issued 2025}{\uline{Google Data Analytics Professional Certificate}}{}{}{}{Completed rigorous training in data cleaning, analysis, visualization, and R programming.}
+
+% University Degree (Next Most Recent)
+\cventry{Aug 2017 -- May 2021}{B.S. in Computer Science and Mathematics}{Pennsylvania State University}{State College, PA}{}{} 
+
+\end{document}

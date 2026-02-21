@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joe Brighter - GravitySim</title>
+        <link rel="stylesheet" href="projectStyle.css">
+        <link rel="stylesheet" href="minesweeper.css">
+        <script type="text/javascript" src="minesweeper.js"></script>
+        <script src="https://kit.fontawesome.com/6c1c3d0aa2.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <p id="logo" class="noselect">
+                        <span id="firstInitial" class="logoMainText">J</span><span class="logoSubText">oe&nbsp;</span>
+                        <span id="secondInitial" class="logoMainText">B</span><span class="logoSubText">righter</span>
+                    </p>
+                    <!--<img src="images/logo.png" class="logo">-->
+                    <ul id="menu" class="noselect">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container">
+                <br><br>
+                <h1>GravitySim</h1>
+                <br>
+                <p style="font-size: 14px;">
+                    NOTE: this project is still a work in progress, and I am actively adding new features and improvements. I will try and keep this page updated with the latest features and improvements, but for the most up-to-date information, please refer to the repository linked below.
+                </p>
+                <br>
+                <p style="font-size: 20px;">
+                    GravitySim is a physics simulation program I created using C++ and OpenGL. It simulates the gravitational interactions between celestial bodies, allowing users to visualize the dynamics of planetary systems and galaxies. 
+                    <br><br>
+                    The program includes features such as adjustable parameters for mass, velocity, and time step, as well as real-time rendering of the simulation. This project is a significant learning experience in both programming and physics, and it has been a rewarding way to explore the complexities of gravitational forces. 
+                    <br><br>
+                    Link to repository: <a class="projectDescriptionLink" target="_blank" href="https://github.com/jbrighter98/GravitySim/tree/main">LINK</a>
+                    <br><br>
+                    <h2>Controls</h2>
+                    <br>
+                    <ul>
+                        <li><b>WASD Keys:</b> Pan the view up, left, down, and right respectively.</li>
+                        <li><b>Left Click:</b> Add a new body to the simulation at the cursor location. Also can interact with menu items</li>
+                    </ul>
+                    <br><br>
+                    While in Free Place mode, you can adjust the properties of placing a new body using in the bottom menu.
+                    <br><br>
+                    While in Analyze mode, you can click on existing bodies to view their properties and trajectories.
+                    <br><br>
+                    You can pause time and step through the simulation about one frame at a time.
+                </p>
+
+                <br><br><br><br>
+
+                
+                <a href="/projects/SimProj/GravitySimRun.html" class="btn">Use the Simulation Here</a>
+                <br><br>
+                <p><span id="phoneMsg"><br>This project does not work well on mobile devices. Please try this on a desktop!</span></p>
+                <br>
+            </div>
+
+            <div id="gameContainer"></div>
+
+            <div class="copyright">
+                <p>Copyright © Joe Brighter. Design inspired by @GreatStack on Youtube</p>
+            </div>
+        </div>
+
+        
+
+    <script>
+        window.oncontextmenu = function ()
+        {
+            //showCustomMenu();
+            return false;     // cancel default menu
+        }
+
+        //easy = 9x9 10
+        //medium = 16x16 40
+        //hard = 30x16 99
+        //very hard = 30x16 120
+        buildBoard(9,9,10);
+
+    </script>
+
+    <script src="../logoScript.js"></script>
+    
+    </body>
+</html>
