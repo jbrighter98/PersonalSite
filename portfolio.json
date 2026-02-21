@@ -3,7 +3,7 @@
     "id": 0,
     "title": "GravitySim",
     "tags": ["coding", "C++"],
-    "description": "GravitySim is a physics simulation program I created using C++ and OpenGL. It simulates the gravitational interactions between celestial bodies, allowing users to visualize the dynamics of planetary systems and galaxies. The program includes features such as adjustable parameters for mass, velocity, and time step, as well as real-time rendering of the simulation. This project is a significant learning experience in both programming and physics, and it has been a rewarding way to explore the complexities of gravitational forces. Link to repository: <a class=\"projectDescriptionLink\" target=\"_blank\" href=\"https://github.com/jbrighter98/GravitySim/tree/main\">LINK</a>",
+    "description": "GravitySim is a physics simulation program I created using C++ and OpenGL. It simulates the gravitational interactions between celestial bodies, allowing users to visualize the dynamics of planetary systems and galaxies. Link to repository: <a class=\"projectDescriptionLink\" target=\"_blank\" href=\"https://github.com/jbrighter98/GravitySim/tree/main\">LINK</a>",
     "destination": "projects/GravitySim.html",
     "image": "images/gravitySim.png",
     "date": "2026-02-20"
