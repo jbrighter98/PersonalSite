@@ -1,118 +1,29 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-}
-:root {
-    --main-color:#3AB8FF;
-    --main-color-darker: #0072b4;
-}
-html {
-    scroll-behavior: smooth;
-}
-body {
-    background: #000;
-    color: #fff;
+.project-heading{
+
+    text-align:center;
+
+    margin-bottom:4rem;
+    margin-top:4rem;
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-/* ---------------------header------------------- */
-#header {
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+.project-heading h2{
+
+    font-size:2.5rem;
+
+    color:var(--clr-primary);
+
+    margin-bottom:1rem;
 }
 
-.container {
-    padding: 10px 10%;
+.project-heading p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#64748b;
 }
 
-/* start nav style */
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* start logo animation and style */
-
-#logo {
-  overflow: hidden;
-  display: inline-block;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#logo:hover span {
-    opacity: 1;
-}
-
-.logoMainText {
-    display: inline-block;
-    vertical-align: baseline;
-    font-weight: bold;
-    color: var(--main-color);
-
-    font-size: 60px;
-}
-.logoSubText {
-    transition: width 0.3s ease-out, opacity 0.3s ease-out;
-    width: 0;
-    opacity: 0;
-    display: inline-block;
-    vertical-align: baseline;
-    overflow: hidden;
-
-    font-size: 40px;
-}
-
-/* end logo animation and style */
-
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-}
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    position: relative;
-}
-nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: var(--main-color);
-    position: absolute;
-    left:0;
-    bottom: -6px;
-    transition: 0.3s;
-}
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-.copyright {
-    width: 100%;
-    text-align: center;
-    padding: 25px;
-    background: #262626;
-    font-weight: 300;
-    margin-top: 100px;
-    color: #ababab;
-    bottom: 0;
-}
 
 /* --------------------- Color Theory ----------------------- */
 
@@ -161,16 +72,16 @@ nav ul li a:hover::after {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-right: 20px;
-  border: 1px solid var(--main-color-darker);
+  border: 1px solid #334155;
   padding: 14px 30px;
   border-radius: 6px;
   text-decoration: none;
-  color: #fff;
+  color: #334155;
   background: transparent;
   transition: background 0.3s;
 }
 .btn:hover {
-  background: var(--main-color-darker)
+  background: #cbd5e1;
 }
 #gameContainer {
   float:none;

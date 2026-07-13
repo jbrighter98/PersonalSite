@@ -3,7 +3,7 @@
     "id": 0,
     "title": "GravitySim",
     "tags": ["coding", "C++"],
-    "description": "GravitySim is a physics simulation program I created using C++ and OpenGL. It simulates the gravitational interactions between celestial bodies, allowing users to visualize the dynamics of planetary systems and galaxies. Link to repository: <a class=\"projectDescriptionLink\" target=\"_blank\" href=\"https://github.com/jbrighter98/GravitySim/tree/main\">LINK</a>",
+    "description": "GravitySim is a physics simulation program I created using C++ and OpenGL. It simulates the gravitational interactions between celestial bodies, allowing users to visualize the dynamics of planetary systems and galaxies.",
     "destination": "projects/GravitySim.html",
     "image": "images/gravitySim.png",
     "date": "2026-02-20"
@@ -12,7 +12,7 @@
     "id": 1,
     "title": "Cyclistic Bike-Share Usage Analysis",
     "tags": ["data analysis"],
-    "description": "In pursuing my Google Data Analytics Certificate, I had the opportunity to do a trial analysis with a large public dataset. I did my cleaning, analysis, and visualizations using RMarkdown. This is the result. Link to repository: <a class=\"projectDescriptionLink\" target=\"_blank\" href=\"https://github.com/jbrighter98/Cyclistic-Data-Analysis/tree/main\">LINK</a>",
+    "description": "In pursuing my Google Data Analytics Certificate, I had the opportunity to do a trial analysis with a large public dataset. I did my cleaning, analysis, and visualizations using RMarkdown. This is the result.",
     "destination": "projects/Cyclistic_BikeShare_Usage_Analysis.html",
     "image": "images/cyclisticImage.png",
     "date": "2025-11-25"

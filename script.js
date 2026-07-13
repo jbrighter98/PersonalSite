@@ -1,30 +1,3 @@
-
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents")
-
-function openTab(tabname) {
-    for(tablink of tablinks) {
-        tablink.classList.remove("active-link");
-    }
-    for(tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-}
-
-// menu open and close
-
-var menu = document.getElementById("menu");
-
-function openMenu() {
-    menu.style.right = "0";
-}
-
-function closeMenu() {
-    menu.style.right = "-200px";
-}
-
 // Send form to google sheet
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzl_Gj5ILPcmxz0jgFoiPtlVd2sesUYvhlmTpPA8Bvx2wMyUoeKjqe_NI3w-ptjFT5y/exec'

@@ -2,166 +2,286 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joe Brighter</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6c1c3d0aa2.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-    <body>
-        <div id="header">
-            <div class="container">
-                <nav>
-                    <p id="logo" class="noselect">
-                        <span id="firstInitial" class="logoMainText">J</span><span class="logoSubText">oe&nbsp;</span>
-                        <span id="secondInitial" class="logoMainText">B</span><span class="logoSubText">righter</span>
-                    </p>
-                    <!--<img src="images/logo.png" class="logo">-->
-                    <ul id="menu" class="noselect">
-                        <li><a href="#header">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#interests">Interests</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
-                    </ul>
-                    <i class="fa-solid fa-bars" onclick="openMenu()"></i>
-                </nav>
-                <div class="header-text">
-                    <p>Software Engineer and Data Scientist</p>
-                    <h1>Hey, I'm <span>Joe Brighter</span></h1>
-                </div>
-            </div>
-        </div>
-        <!------------about----------->
-        <div id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="about-col-1">
-                        <img src="images/profile_pic.png" alt="profile_pic">
-                    </div>
-                    <div class="about-col-2">
-                        <h1 class="sub-title noselect">About Me</h1>
-                        <p>
-                            I am a trained professional Software Developer and a certified Data Scientist. 
-                            <br><br>
-                            With my current Computer Science degree and experience developing growing technologies, I enjoy pursuing programming and data science projects, especially those related to Astronomy or Physics. 
-                        </p>
 
-                        <div class="tab-titles noselect">
-                            <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
-                            <p class="tab-links" onclick="openTab('experience')">Experience</p>
-                            <p class="tab-links" onclick="openTab('education')">Education and Certifications</p>
-                        </div>
-                        <div id="skills" class="tab-contents active-tab">
-                            <ul>
-                                <span style="font-size: 18px;">Software Skills</span>
-                                <li><span>Full-Stack Web Development</span><br>Designing web interfaces and database solutions</li>
-                                <li><span>Backend Engineering</span><br>Maintaining database structure for development</li>
-                                <li><span>Graphics Development</span><br>C++ and OpenGL for graphical rendering</li>
-                                <br>
-                                <span style="font-size: 18px;">Data Skills</span>
-                                <li><span>Data Science</span><br>Developing machine learning algorithms and statistical models</li>
-                                <li><span>Data Analysis</span><br>Data collection, storage, cleaning, analysis, and visualization</li>
-                            </ul>
-                        </div>
-                        <div id="experience" class="tab-contents">
-                            <ul>
-                                <li><span>2025 - Present</span><br>Freelance Software Engineer</li>
-                                <li><span>2022 - 2024</span><br>Software Developer II Contractor at Comcast</li>
-                                <li><span>2020 - 2022</span><br>Lead Developer at QuestUni LLC</li>
-                            </ul>
-                        </div>
-                        <div id="education" class="tab-contents">
-                            <ul>
-                                <li><span>2026</span><br>Google Advanced Data Analytics Certification <a href="https://coursera.org/share/0efcfad4912bd2c6ac587d3aa4fb072e" target="_blank">(View here)</a></li>
-                                <li><span>2025</span><br>Google Data Analytics Certification <a href="https://coursera.org/share/3211e6b041e864bc8ad2a7b14bcbf67c" target="_blank">(View here)</a></li>
-                                <li><span>2021</span><br>BS in Computer Science, Minor in Mathematics from Pennsylvania State University</li>
-                            </ul>
-                        </div>
+<body>
 
-                    <a style="margin-right:20px" href="resumeBuildDataScience/JosephBrighter.pdf" download class="btn btn2">Download Data Science Resume</a>
-                    <a href="resumeBuildSoftwareEng/JosephBrighter.pdf" download class="btn btn2">Download Software Engineer Resume</a>
-                    </div>
-                    
-                </div>
+    <!-- ===================================== -->
+    <!-- Navigation -->
+    <!-- ===================================== -->
+
+    <header>
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <span>Joe</span>Brighter
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">What I Do</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- ===================================== -->
+    <!-- Hero -->
+    <!-- ===================================== -->
+
+    <section id="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-intro">
+                Hello, I'm
+            </p>
+
+            <h1>Joe Brighter</h1>
+
+            <h2>
+                Software Engineer • Musician
+            </h2>
+
+            <p class="hero-description">
+                I'm a passionate software engineer and hobbyist musician based in Philadelphia, PA. I love creating innovative solutions and composing music that resonates with people.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn primary">
+                    View Portfolio
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
             </div>
+
         </div>
-        <!------------Portfolio----------->
-        <div id="portfolio">
-            <div class="container">
-                <h1 class="sub-title noselect">My Projects</h1>
-                <div class="work-list" id="work-list">
-                </div>
-                <a href="portfolio.html" class="btn">See More</a>
-            </div>
+
+        <div class="hero-image">
+
+            <img src="images/MePortrait.jpg"
+                alt="Profile Picture">
+
         </div>
-        <!------------Interests and Hobbies----------->
-        <div id="interests">
-            <div class="container">
-                <h1 class="sub-title noselect">Interests and Hobbies</h1>
-                <div class="interests-list">
-                    <div>
-                        <i class="fa-solid fa-meteor"></i>
-                        <h2>Astronomy and Astrophysics</h2>
-                        <p>
-                            I have always had an interest in Astronomy since I was a child. I originally planned to pursue Astrophysics for my degree in University, but I switched to Computer Science due to some doubt I had at the time. While I fell in love with technology and data, I still hold a love for Astronomy and Physics in my heart.
-                            <br><br>
-                            My dream is to apply software engineering and data science to astronomy and astrophysics. Right now my focus is applying my software knowledge and building strong data science foundations: machine learning, statistical modeling, and large-scale data analysis. I'm looking for a role where I can contribute while continuing to grow these skills.
-                        </p>
-                        <!--<a href="#">learn more</a>-->
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-music"></i>
-                        <h2>Music and Composition</h2>
-                        <p>
-                            I grew up learning how to play the guitar. As I got older, I started to try out other instruments. That is when I found my new love for piano and classical/cinematic composition. In my free time, when I feel inspired, I will compose music on my piano and some may even make it to youtube. <br><br>
-                            Check out my compositions on youtube if you're interested!
-                        </p>
-                        <a href="https://www.youtube.com/@josephbrighter3384" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!------------contact----------->
-        <div id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="contact-left">
-                        <h1 class="sub-title noselect">Contact Me</h1>
-                        <p><i class="fa-solid fa-paper-plane"></i> Joe.Brighter98@gmail.com</p>
-                        <p><i class="fa-solid fa-phone"></i> 267-481-0802</p>
-                        <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/joseph-brighter-53607a176/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://www.facebook.com/joe.brighter.9" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/joe.brighter/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://github.com/jbrighter98" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-                        </div>
-                        <a href="resumeBuildDataScience/JosephBrighter.pdf" download class="btn btn2">Download DS Resume</a>
-                        <a href="resumeBuildSoftwareEng/JosephBrighter.pdf" download class="btn btn2">Download SE Resume</a>
-                    </div>
-                    <div class="contact-right">
-                        <form name="submit-to-google-sheet">
-                            <input type="text" name="Name" placeholder="Your Name" required>
-                            <input type="email" name="Email" placeholder="Your Email" required>
-                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                            <input type="hidden" name="Timestamp" id="timestamp">
-                            <button type="submit" class="btn btn2 btn3">Submit</button>
-                        </form>
-                        <span id="msg"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>Copyright © Joe Brighter. Design inspired by @GreatStack on Youtube</p>
-            </div>
-        </div>
+
+    </section>
 
 
 
-        <script src="logoScript.js"></script>
-        <script src="script.js"></script>
-        <script src="portfolioScript.js"></script>
+    <!-- ===================================== -->
+    <!-- Stuff I Do -->
+    <!-- ===================================== -->
+
+    <section id="about">
+
+        <div class="section-heading">
+
+            <h2>Stuff I Do</h2>
+
+            <p>
+                A quick overview of my skills and interests.
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    💻
+                </div>
+
+                <h3>Software Development</h3>
+
+                <p>
+                    I specialize in full-stack web development, creating responsive and user-friendly applications. My expertise includes JavaScript, Python, and various frameworks and libraries.
+                </p>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🎹
+                </div>
+
+                <h3>Music</h3>
+
+                <p>
+                    Classically trained in guitar, I have taught myself piano and music production. I enjoy composing and producing music in my free time.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@josephbrighter3384" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🎨
+                </div>
+
+                <h3>3D Modeling & Animation</h3>
+
+                <p>
+                    I have a growing experience in 3D modeling and animation, creating visual content for various applications, including games, simulations, and presentations.
+                </p>
+
+            </article>
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🧠
+                </div>
+
+                <h3>Studying Physics</h3>
+
+                <p>
+                    I study physics in my free time, exploring the fundamental principles of the universe and how they apply to technology and everyday life. This has been my passion since I was a child.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- Portfolio -->
+    <!-- ===================================== -->
+
+    <section id="portfolio">
+
+        <div class="section-heading">
+
+            <h2>Featured Projects</h2>
+
+            <p>
+                A small selection of my recent work.
+            </p>
+
+        </div>
+
+        <div class="portfolio-grid" id="work-list">
+
+
+        </div>
+
+        <div class="portfolio-button">
+
+            <a href="portfolio.html" class="btn primary">
+                View All Projects
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- Contact -->
+    <!-- ===================================== -->
+
+    <section id="contact">
+
+        <div class="section-heading">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                Interested in working together or just saying hello?
+            </p>
+
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Contact Information</h3>
+
+                <p>Email</p>
+                <p>Joe.Brighter98@gmail.com</p>
+
+                <p>Socials</p>
+
+                <div class="social-links">
+
+                    <a href="https://www.linkedin.com/in/joseph-brighter-53607a176/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/joe.brighter.9" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/joe.brighter/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/jbrighter98" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+
+                </div>
+
+            </div>
+
+            <form class="contact-form" name="submit-to-google-sheet">
+
+                <input
+                    type="text"
+                    name="Name"
+                    placeholder="Your Name"
+                >
+                <input
+                    type="email"
+                    name="Email"    
+                    placeholder="Email"
+                >
+                <textarea
+                    name="Message"
+                    rows="6"
+                    placeholder="Message"
+                ></textarea>
+                <input type="hidden" name="Timestamp" id="timestamp">
+                <button type="submit" class="btn primary">
+                    Send Message
+                </button>
+
+            </form>
+            <span id="msg"></span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- Footer -->
+    <!-- ===================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Joe Brighter. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="portfolioScript.js"></script>
 
         <script>
             fetch('./portfolio.json')
@@ -179,5 +299,7 @@
                 console.error('Error fetching or parsing JSON:', error);
                 });
         </script>
-    </body>
+
+</body>
 </html>
+

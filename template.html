@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe Brighter | Portfolio</title>
+    <title>Joe Brighter</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6c1c3d0aa2.js" crossorigin="anonymous"></script>
@@ -23,44 +23,39 @@
     <header>
         <nav class="navbar">
 
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
                 <span>Joe</span>Brighter
             </a>
 
             <ul class="nav-links">
-                <li><a href="index.html#hero">Home</a></li>
-                <li><a href="index.html#about">What I Do</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="../index.html#hero">Home</a></li>
+                <li><a href="../index.html#about">What I Do</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
 
         </nav>
     </header>
 
-
     <!-- ===================================== -->
-    <!-- Portfolio -->
+    <!-- Content -->    
     <!-- ===================================== -->
 
-    <section id="portfolio">
+    <section id="about">
 
         <div class="section-heading">
 
-            <h2>My Projects</h2>
+            <h2>Template</h2>
 
             <p>
-                Here is a collection of my projects. Each project reflects my dedication to learning and my passion for creating innovative solutions.
+                Template for projects.
             </p>
 
         </div>
 
-        <div class="portfolio-grid" id="work-list"></div>
-
+        <div class="content"></div>
 
     </section>
-
-
-
-
 
     <!-- ===================================== -->
     <!-- Footer -->
@@ -74,24 +69,6 @@
 
     </footer>
 
-    <script src="portfolioScript.js"></script>
-
-        <script>
-            fetch('./portfolio.json')
-                .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json(); // Parse the JSON data from the response
-                })
-                .then(data => {
-                // 'data' now contains the parsed JSON object
-                displayProjects(data, "desc");
-                })
-                .catch(error => {
-                console.error('Error fetching or parsing JSON:', error);
-                });
-        </script>
 
 </body>
 </html>

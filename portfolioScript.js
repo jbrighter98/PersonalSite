@@ -20,23 +20,19 @@ function displayProjects(projects, order = "desc", limit = 0) {
     var workList = document.getElementById("work-list");
 
     for(let i = 0; i < limit; i++) {
-        
-        var workHTML = "<div class=\"work\"> \
-                        <span class=\"helper\"></span> \
-                        <img src=\"" + projSorted[i]["image"] + "\" alt=\"" + projSorted[i]["title"] + "\"></img> \
-                        <div class=\"layer\"> \
-                            <h3>" + projSorted[i]["title"] + "</h3> \
-                            <div class=\"tag-holder\">"
 
-        for(let j = 0; j < projSorted[i]["tags"].length; j++) {
-            workHTML += "<div class=\"tag\">" + projSorted[i]["tags"][j] + "</div>";
-        }
+        var workHTML = "<a href=\""+ projSorted[i]["destination"] +"\" style=\"text-decoration: none; color: inherit;\"> \
+                            <article class=\"project-card\"> \
+                                <img src=\"" + projSorted[i]["image"] + "\" alt=\"" + projSorted[i]["title"] + "\"> \
+                                <div class=\"project-content prevent-select\"> \
+                                    <h3>" + projSorted[i]["title"] + "</h3> \
+                                    <p> \
+                                        " + projSorted[i]["description"] + " \
+                                    </p> \
+                                </div> \
+                            </article> \
+                        </a>"
 
-        workHTML += "</div> \
-                            <p>" + projSorted[i]["description"] + "</p> \
-                            <a class=\"projectLink\" href=\"" + projSorted[i]["destination"] + "\"><i class=\"fa-solid fa-up-right-from-square\"></i></a> \
-                        </div> \
-                    </div>";
 
         workList.innerHTML += workHTML;
 

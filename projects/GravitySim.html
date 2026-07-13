@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Joe Brighter - GravitySim</title>
-        <link rel="stylesheet" href="projectStyle.css">
-        <link rel="stylesheet" href="minesweeper.css">
-        <script type="text/javascript" src="minesweeper.js"></script>
-        <script src="https://kit.fontawesome.com/6c1c3d0aa2.js" crossorigin="anonymous"></script>
-        
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Brighter</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projectStyle.css">
+    <script src="https://kit.fontawesome.com/6c1c3d0aa2.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
     <body>
 
-        <div id="header">
-            <div class="container">
-                <nav>
-                    <p id="logo" class="noselect">
-                        <span id="firstInitial" class="logoMainText">J</span><span class="logoSubText">oe&nbsp;</span>
-                        <span id="secondInitial" class="logoMainText">B</span><span class="logoSubText">righter</span>
-                    </p>
-                    <!--<img src="images/logo.png" class="logo">-->
-                    <ul id="menu" class="noselect">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../portfolio.html">Portfolio</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        <!-- ===================================== -->
+        <!-- Navigation -->
+        <!-- ===================================== -->
 
-        <div id="header">
-            <div class="container">
-                <br><br>
-                <h1>GravitySim</h1>
-                <br>
+        <header>
+            <nav class="navbar">
+
+                <a href="../index.html" class="logo">
+                    <span>Joe</span>Brighter
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="../index.html#hero">Home</a></li>
+                    <li><a href="../index.html#about">What I Do</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+
+            </nav>
+        </header>
+
+
+
+        <section id="content">
+
+            <div class="section-heading">
+
+                <h2>GravitySim</h2>
+
                 <p style="font-size: 14px;">
                     NOTE: this project is still a work in progress, and I am actively adding new features and improvements. I will try and keep this page updated with the latest features and improvements, but for the most up-to-date information, please refer to the repository linked below.
                 </p>
@@ -43,14 +55,15 @@
                     <br><br>
                     The program includes features such as adjustable parameters for mass, velocity, and time step, as well as real-time rendering of the simulation. This project is a significant learning experience in both programming and physics, and it has been a rewarding way to explore the complexities of gravitational forces. 
                     <br><br>
-                    Link to repository: <a class="projectDescriptionLink" target="_blank" href="https://github.com/jbrighter98/GravitySim/tree/main">LINK</a>
+                    Link to repository: <a class="projectDescriptionLink" target="_blank" href="https://github.com/jbrighter98/GravitySim/tree/main">HERE</a>
                     <br><br>
-                    <h2>Controls</h2>
+                    <b>Controls</b>
                     <br>
-                    <ul>
-                        <li><b>WASD Keys:</b> Pan the view up, left, down, and right respectively.</li>
-                        <li><b>Left Click:</b> Add a new body to the simulation at the cursor location. Also can interact with menu items</li>
-                    </ul>
+                    
+                    <b>WASD Keys:</b> Pan the view up, left, down, and right respectively.</li>
+                    <br>
+                    <b>Left Click:</b> Add a new body to the simulation at the cursor location. Also can interact with menu items</li>
+                    
                     <br><br>
                     While in Free Place mode, you can adjust the properties of placing a new body using in the bottom menu.
                     <br><br>
@@ -62,37 +75,27 @@
                 <br><br><br><br>
 
                 
-                <a href="/projects/SimProj/GravitySimRun.html" class="btn">Use the Simulation Here</a>
+                <a href="/projects/SimProj/GravitySimRun.html" class="btn" style="margin-left: 25%;">Use the Simulation Here</a>
                 <br><br>
                 <p><span id="phoneMsg"><br>This project does not work well on mobile devices. Please try this on a desktop!</span></p>
                 <br>
+
             </div>
 
-            <div id="gameContainer"></div>
+        </section>
 
-            <div class="copyright">
-                <p>Copyright © Joe Brighter. Design inspired by @GreatStack on Youtube</p>
-            </div>
-        </div>
 
-        
+        <!-- ===================================== -->
+        <!-- Footer -->
+        <!-- ===================================== -->
 
-    <script>
-        window.oncontextmenu = function ()
-        {
-            //showCustomMenu();
-            return false;     // cancel default menu
-        }
+        <footer>
 
-        //easy = 9x9 10
-        //medium = 16x16 40
-        //hard = 30x16 99
-        //very hard = 30x16 120
-        buildBoard(9,9,10);
+            <p>
+                © 2026 Joe Brighter. All Rights Reserved.
+            </p>
 
-    </script>
-
-    <script src="../logoScript.js"></script>
+        </footer>
     
     </body>
 </html>
