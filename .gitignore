@@ -1,0 +1,10 @@
+.env
+*.podspec.lock
+node_modules/
+
+resumeBuildDataScience/
+resumeBuildDataScienceFINANCE/
+resumeBuildDataScienceHEALTHCARE/
+resumeBuildDataScienceLOGISTICS/
+resumeBuildPhysicsResearch/
+resumeBuildSoftwareEng/

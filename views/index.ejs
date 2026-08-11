@@ -118,13 +118,13 @@
             <article class="service-card">
 
                 <div class="service-icon">
-                    🎨
+                    🧠
                 </div>
 
-                <h3>3D Graphics Development</h3>
+                <h3>AI Development</h3>
 
                 <p>
-                    I have projects that use C++ and OpenGL to create 3D graphics and simulations. I enjoy exploring the intersection of art and technology.
+                    I have experience in developing and training AI, including machine learning models and neural networks.
                 </p>
 
             </article>
@@ -149,7 +149,7 @@
             <article class="service-card">
 
                 <div class="service-icon">
-                    🧠
+                    📖
                 </div>
 
                 <h3>Studying Physics</h3>
@@ -184,14 +184,34 @@
 
         <div class="portfolio-grid" id="work-list">
 
+            <% if (items && items.length > 0) { %>
+                <% let count = 0; %>
+                <% items.forEach(item => { %>
+                    <% if (count >= 3) return; %>
+                    <a href="<%= item.destination %>" style="text-decoration: none; color: inherit;">
+                        <article class="project-card">
+                            <img src="<%= item.image %>" alt="<%= item.title %>">
+                            <div class="project-content prevent-select">
+                                <h3><%= item.title %></h3>
+                                <p>
+                                    <%= item.description %>
+                                </p>
+                            </div>
+                        </article>
+                    </a>
+                    <% count++; %>
+                <% }); %>
+            <% } else { %>
+                <p>No projects available at the moment. Please check back later!</p>
+            <% } %>
 
         </div>
 
         <div class="portfolio-button">
 
-            <a href="portfolio.html" class="btn primary">
-                View All Projects
-            </a>
+                <a href="/projects" class="btn primary">
+                    View All Projects
+                </a>
 
         </div>
 

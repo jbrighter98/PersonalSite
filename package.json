@@ -1,0 +1,19 @@
+{
+  "name": "personalsite",
+  "version": "1.0.0",
+  "description": "This is the repo for my personal site hosted on joebrighter.com",
+  "main": "logoScript.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
